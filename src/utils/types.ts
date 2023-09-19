@@ -1,0 +1,1 @@
+export type ArrayToUnion<T extends any[]> = T extends (infer A)[] ? A : never;
