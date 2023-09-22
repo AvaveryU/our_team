@@ -1,0 +1,7 @@
+:root {
+  --primaryWhite: rgba(255, 255, 255, 1);
+  --primaryBlack: rgba(21, 19, 23, 1);
+  --secondaryBlack: rgba(0, 0, 0, 1);
+  --greyLight: rgba(248, 248, 248, 1);
+  --primaryViolet: rgba(81, 38, 137, 1);
+}
