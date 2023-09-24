@@ -1,10 +1,21 @@
-import { IUser } from "../store/reducers/users";
-
 export type ArrayToUnion<T extends any[]> = T extends (infer A)[] ? A : never;
 
-type TSupport = {
+export interface IUser {
+    avatar?: string
+    email: string
+    first_name: string
+    id: number
+    last_name: string
+}
+
+interface TSupport {
     url: string
     text: string
+}
+
+export interface IUserProfile {
+    data: IUser
+    support: TSupport
 }
 
 export type TListUsers = {

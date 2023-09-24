@@ -28,6 +28,14 @@
   background: var(--primaryWhite);
   box-shadow: 0px 1px 4px 0 rgba(21, 19, 23, 0.1);
   cursor: pointer;
+  text-decoration: none;
+  color: var(--primaryBlack);
+  z-index: 9;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 5px 10px 0 rgba(21, 19, 23, 0.2);
+  }
 }
 
 .avatar {
@@ -37,6 +45,7 @@
 
 .image {
   height: 100%;
+  width: 100%;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -46,16 +55,18 @@
 }
 
 .like {
-  background-image: url("../../images/like.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 30px;
-  height: 28px;
+  padding: 7px;
   cursor: pointer;
   align-self: flex-end;
-  border: 0;
+  border: 1px solid var(--greyLight);
   border-radius: 4px;
   background-color: var(--greyLight);
+  z-index: 10;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: var(--primaryBlack);
+  }
 }
 
 .button {
