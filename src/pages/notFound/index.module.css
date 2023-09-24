@@ -1,0 +1,28 @@
+.page {
+  padding: 48px 80px 69px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.button {
+  background-color: var(--primaryViolet);
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: var(--primaryWhite);
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 1svh 0 var(--primaryViolet);
+    color: var(--primaryWhite);
+  }
+}
+
+.text {
+  color: var(--primaryViolet);
+  text-align: center;
+}
