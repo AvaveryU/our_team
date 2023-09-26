@@ -12,7 +12,7 @@
 В связи с описанием документации используемого сервиса используйте для регистрации следующие данные:  
 `email: eve.holt@reqres.in`  
 `password: pistol`  
-для авторизации:
+для авторизации:  
 `email: eve.holt@reqres.in`  
 `password: cityslicka`
 
