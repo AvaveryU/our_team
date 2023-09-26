@@ -48,7 +48,7 @@ const App: FC = () => {
                     </ProtectedRoute>}
                 />
                 <Route path={pathnames.notFound} element={<NotFoundPage />} />
-                <Route path="*" element={<Navigate to={pathnames.notFound} replace />} />
+                <Route path="/our_team/*" element={<Navigate to={pathnames.notFound} replace />} />
             </Routes>
 
         </div>

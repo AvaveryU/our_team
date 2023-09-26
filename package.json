@@ -1,7 +1,7 @@
 {
   "name": "our_team",
   "version": "0.1.0",
-  "homepage": "./",
+  "homepage": "https://avaveryu.github.io/our_team/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
