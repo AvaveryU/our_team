@@ -16,14 +16,14 @@ const TeamPage: FC = () => {
     let navigate = useNavigate();
 
     useLayoutEffect((() => {
-        users.length < 1 && getUsersData();
+        users.length < 8 && getUsersData();
     }), []);
 
     const handleNextUsers = (count: number) => {
         if (totalPages < page + count) return
         getUsersData(page + count)
     }
-    // React.MouseEvent<SVGSVGElement> | React.MouseEvent<HTMLAnchorElement>
+
     const onOpenProfile = (e: React.MouseEvent<HTMLAnchorElement>, userId: number) => {
         if ((e.target as SVGSVGElement).dataset.id === `like_button_${userId}` || (e.target as Element).hasAttribute('d')) return
         e.preventDefault();

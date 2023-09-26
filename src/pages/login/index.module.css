@@ -1,0 +1,113 @@
+.page {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  min-width: 500px;
+  height: auto;
+  padding: 16px;
+  background: var(--primaryWhite);
+  box-shadow: 0 4px 20px 0 var(--lightBlack);
+  border-radius: 16px;
+  box-sizing: border-box;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+  user-select: none;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 16px;
+  line-height: 136.187%;
+  user-select: none;
+}
+
+.input {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input input {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  padding: 16px 40px 16px 12px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 8px;
+  background: var(--greyLight);
+  height: 48px;
+}
+
+.input input::placeholder {
+  font-size: 14px;
+}
+
+.input input:focus {
+  outline: 1px solid var(--primaryViolet);
+}
+
+.button {
+  background-color: var(--primaryViolet);
+  color: var(--primaryWhite);
+  font-size: 16px;
+  padding: 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.3s ease;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: auto;
+  }
+}
+
+.icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+
+  svg {
+    object-fit: contain;
+    width: 100%;
+  }
+}
+
+.error {
+  margin-top: -4px;
+  font-size: 10px;
+  color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    min-width: 375px;
+  }
+}

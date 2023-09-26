@@ -6,6 +6,7 @@ import { pathnames } from '../../utils/constants';
 import { IUser } from '../../utils/types';
 import { UsersActions } from '../../store/reducers/users';
 import { store } from '../../store/store';
+import { logOutUser } from '../../utils/middlewars';
 
 interface IHeader {
     currentProfile: IUser | null
@@ -14,12 +15,17 @@ interface IHeader {
 
 const Header: FC<IHeader> = ({ currentProfile, minHeight }) => {
     const navigate = useNavigate();
-    let match = useMatch("/team/:id");
+    let match = useMatch(`${pathnames.team}/:id`);
     const hasStyle = window.innerWidth <= 768 && match && minHeight;
 
     const handleExit = (path: string) => {
         store.dispatch<UsersActions>({ type: "SET_PROFILE", currentProfile: null });
         navigate(path);
+    };
+
+    const handleLogout = (path: string) => {
+        logOutUser();
+        handleExit(path);
     };
 
     return (
@@ -41,7 +47,7 @@ const Header: FC<IHeader> = ({ currentProfile, minHeight }) => {
                 className='button__exit'
                 location={pathnames.home}
                 text='Выход'
-                onClick={() => handleExit(pathnames.home)}
+                onClick={() => handleLogout(pathnames.home)}
             />
             {currentProfile &&
                 <Button

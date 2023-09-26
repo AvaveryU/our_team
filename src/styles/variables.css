@@ -2,6 +2,9 @@
   --primaryWhite: rgba(255, 255, 255, 1);
   --primaryBlack: rgba(21, 19, 23, 1);
   --secondaryBlack: rgba(0, 0, 0, 1);
+  --lightBlack: rgba(0, 0, 0, 0.08);
+  --greyDark: rgba(128, 129, 133, 1);
   --greyLight: rgba(248, 248, 248, 1);
   --primaryViolet: rgba(81, 38, 137, 1);
+  --red: rgba(255, 97, 97, 1);
 }
