@@ -1,46 +1,28 @@
-# Getting Started with Create React App
+# Карточки с пользователями
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ссылка на [GH-Pages](https://avaveryu.github.io/our_team/)
 
-## Available Scripts
+## Описание
 
-In the project directory, you can run:
+На главной странице отображается список карточек пользователей и по клику на каждую карточку открывается страница с детальной информацией о пользователе. Список пользователей доступен только для зарегистрированных пользователей.
 
-### `npm start`
+В качестве API сервиса используется https://reqres.in/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Регистрация и авторизация осуществляются через email/password  
+В связи с описанием документации используемого сервиса используйте для регистрации следующие данные:  
+`email: eve.holt@reqres.in`  
+`password: pistol`  
+для авторизации:
+`email: eve.holt@reqres.in`  
+`password: cityslicka`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Используемые технологии:
 
-### `npm test`
+React.js, TypeScript, Redux, react-router
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Инструкция по использованию проекта c CRA
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- установить завивисимости, указанные в package.json, с помощью команды в терминале `npm i`.
+- запустить проект для разработки с помощью команды в терминале `npm run start`.  
+  Открыв http://localhost:3000 в браузере, вы сможете пользоваться функционалом сайта.
+- для выполнения production сборки введите команду в терминале `npm run build`.

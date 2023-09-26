@@ -32,9 +32,7 @@ export interface IUserRegistrationSuccess {
     readonly id: string;
 }
 
-export interface IUserLoginSuccess {
-    readonly token: string;
-}
+export interface IUserLoginSuccess extends Omit<IUserRegistrationSuccess, 'id'> { }
 
 export interface IUserRegistration {
     readonly email: string;
