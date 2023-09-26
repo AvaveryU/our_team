@@ -1,0 +1,96 @@
+.page {
+  padding: 48px 80px 69px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.user {
+  padding: 36px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  box-sizing: border-box;
+  max-width: 305px;
+  min-height: 263px;
+  width: 100%;
+  border-radius: 10px;
+  background: var(--primaryWhite);
+  box-shadow: 0px 1px 4px 0 rgba(21, 19, 23, 0.1);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--primaryBlack);
+  z-index: 9;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0px 5px 10px 0 rgba(21, 19, 23, 0.2);
+  }
+}
+
+.avatar {
+  width: 124px;
+  height: 124px;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 20px;
+}
+
+.like {
+  padding: 7px;
+  cursor: pointer;
+  align-self: flex-end;
+  border: 1px solid var(--greyLight);
+  border-radius: 4px;
+  background-color: var(--greyLight);
+  z-index: 10;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: var(--primaryBlack);
+  }
+}
+
+.button {
+  margin: 24px auto 0;
+}
+
+.button__image {
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button__image img {
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 790px) {
+  .page {
+    padding: 32px 35px;
+  }
+
+  .button {
+    margin-top: 32px;
+  }
+}

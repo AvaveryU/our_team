@@ -1,0 +1,52 @@
+.page {
+  padding: 48px 80px 69px;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  column-gap: 129px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 136.187%;
+  user-select: none;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 16px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.phone {
+  white-space: nowrap;
+}
+
+.icon {
+  width: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.icon svg {
+  object-fit: contain;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 32px 16px;
+    grid-template-columns: 1fr;
+    row-gap: 34px;
+  }
+
+  .contacts {
+    grid-row: 1 / span 1;
+  }
+}
