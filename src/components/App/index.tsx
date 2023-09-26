@@ -9,11 +9,15 @@ import UserProfilePage from '../../pages/userProfile';
 import { getProfile } from '../../utils/middlewars';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import RegisterPage from '../../pages/register';
+import ProtectedRoute from '../protectedRoute/protectedRoute';
+import LoginPage from '../../pages/login';
 
 const App: FC = () => {
     const location = useLocation();
     const { currentProfile } = useSelector((state: RootState) => state.users)
     let match = useMatch(pathnames.user);
+    const token = localStorage.getItem("token");
 
     useEffect(() => {
         !currentProfile && match && getProfile(match?.params.id as string)
@@ -21,11 +25,28 @@ const App: FC = () => {
 
     return (
         <div className={style.app}>
-            {(location.pathname !== pathnames.home && location.pathname !== pathnames.notFound) && <Header currentProfile={currentProfile} minHeight={412} />}
+            {(token !== null) && <Header currentProfile={currentProfile} minHeight={412} />}
             <Routes location={location}>
-                <Route path={pathnames.home} element={<div>регистрация</div>} />
-                <Route path={pathnames.team} element={<TeamPage />} />
-                <Route path={pathnames.team + '/:id'} element={<UserProfilePage currentProfile={currentProfile} />} />
+                <Route path={pathnames.home} element={
+                    <ProtectedRoute isAuthenticated={token === null} path={pathnames.team}>
+                        <RegisterPage />
+                    </ProtectedRoute>}
+                />
+                <Route path={pathnames.login} element={
+                    <ProtectedRoute isAuthenticated={token === null} path={pathnames.team}>
+                        <LoginPage />
+                    </ProtectedRoute>}
+                />
+                <Route path={pathnames.team} element={
+                    <ProtectedRoute isAuthenticated={token !== null} >
+                        <TeamPage />
+                    </ProtectedRoute>}
+                />
+                <Route path={pathnames.team + '/:id'} element={
+                    <ProtectedRoute isAuthenticated={token !== null}>
+                        <UserProfilePage currentProfile={currentProfile} />
+                    </ProtectedRoute>}
+                />
                 <Route path={pathnames.notFound} element={<NotFoundPage />} />
                 <Route path="*" element={<Navigate to={pathnames.notFound} replace />} />
             </Routes>
@@ -35,3 +56,4 @@ const App: FC = () => {
 };
 
 export default App;
+

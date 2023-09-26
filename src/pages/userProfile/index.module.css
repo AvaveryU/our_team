@@ -24,6 +24,10 @@
   gap: 8px;
 }
 
+.phone {
+  white-space: nowrap;
+}
+
 .icon {
   width: 24px;
   display: flex;

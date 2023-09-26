@@ -29,7 +29,7 @@ const UserProfilePage: FC<IUserProfilePage> = ({ currentProfile }) => {
                 <div className={style.contact}>
                     <div className={style.icon}><PhoneIcon /></div>
                     {/* в запросе к https://reqres.in/ нет информации о телефоне, поэтому хард-код */}
-                    <p>+7 (954) 333-44-55</p>
+                    <p className={style.phone}>+7 (954) 333-44-55</p>
                 </div>
                 <div className={style.contact}>
                     <div className={style.icon}><EmailIcon /></div>

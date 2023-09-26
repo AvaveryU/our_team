@@ -1,21 +1,21 @@
 export type ArrayToUnion<T extends any[]> = T extends (infer A)[] ? A : never;
 
 export interface IUser {
-    avatar?: string
-    email: string
-    first_name: string
-    id: number
-    last_name: string
+    readonly avatar?: string
+    readonly email: string
+    readonly first_name: string
+    readonly id: number
+    readonly last_name: string
 }
 
 interface TSupport {
-    url: string
-    text: string
+    readonly url: string
+    readonly text: string
 }
 
 export interface IUserProfile {
-    data: IUser
-    support: TSupport
+    readonly data: IUser
+    readonly support: TSupport
 }
 
 export type TListUsers = {
@@ -26,3 +26,17 @@ export type TListUsers = {
     readonly data: Array<IUser>
     readonly support?: TSupport
 };
+
+export interface IUserRegistrationSuccess {
+    readonly token: string;
+    readonly id: string;
+}
+
+export interface IUserLoginSuccess {
+    readonly token: string;
+}
+
+export interface IUserRegistration {
+    readonly email: string;
+    readonly username: string;
+}
